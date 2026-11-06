@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio — Arte / Diseño</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <script src="js/theme.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
+  <script src="js/home-effects.js" defer></script>
+</head>
+<body class="home">
+  <a class="skip-link" href="#proyectos">Saltar a proyectos</a>
+  <header class="home-header">
+    <h1 class="home-wordmark"><a href="index.html" aria-label="Lemonike — inicio"><img src="assets/lemonike-logo.svg" alt="LEMONIKE" /></a></h1>
+    <p class="home-role">Art director &amp;<br />Brand designer</p>
+  </header>
+
+  <main class="home-canvas">
+    <div class="chrome-sculpture" data-pixel-src="assets/my sandwich@1-562x972 1.png" aria-hidden="true"></div>
+    <img class="home-leona" src="assets/leona.svg" alt="" />
+    <nav class="floating-nav" aria-label="Principal">
+      <a class="pill nav-contact" href="contacto.html">Contacto</a>
+      <a class="pill nav-about" href="quien-soy.html">Quién soy</a>
+      <a class="pill nav-art" href="arte.html">Arte</a>
+      <a class="pill nav-design" href="diseno.html">Diseño</a>
+    </nav>
+    <a class="pill imagine-link" href="mailto:lemonikestuccio@gmail.com">Let’s imagine together</a>
+    <a class="pill forward-link" href="#proyectos">Go Forward <span aria-hidden="true">↓</span></a>
+
+    <section class="featured-work" id="proyectos" aria-label="Proyectos seleccionados">
+      <a class="work work-one" href="proyecto.html?slug=monkey-philosophy">
+        <div class="work-image"><img src="assets/monkey-philosophy/mph-10.gif" alt="Identidad visual animada de Monkey Philosophy" loading="lazy" /></div>
+        <div class="work-caption"><span>Monkey Philosophy</span><span>Branding ↗</span></div>
+      </a>
+      <a class="work work-two" href="proyecto.html?slug=fashion-money">
+        <div class="work-image"><img src="assets/fashion-money/fm-01.png" alt="Fashion Money — Cash your Dreams" loading="lazy" /></div>
+        <div class="work-caption"><span>Fashion Money</span><span>Identidad ↗</span></div>
+      </a>
+      <a class="work work-three" href="proyecto.html?slug=coco">
+        <div class="work-image"><img src="assets/arte-coco/coco.jpeg" alt="Coco, retrato en tinta sobre papel" loading="lazy" /></div>
+        <div class="work-caption"><span>Coco</span><span>Arte ↗</span></div>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-credit"><strong>© 2026 LEMONIKE. All rights reserved.</strong></p>
+    <div class="footer-social"><strong>Social media</strong><nav aria-label="Redes sociales"><a href="https://www.linkedin.com/in/monica-gabriela-a-8071aa42" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://www.instagram.com/ilemonike/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></nav></div>
+    <div class="footer-legal"><p class="footer-notice" lang="en">All original artwork, illustrations, visual concepts, and designs featured on this website are the intellectual property of their respective copyright holders. Unauthorized reproduction, distribution, modification, commercial use, or use for AI training is prohibited without prior written permission.</p></div>
+  </footer>
+</body>
+</html>

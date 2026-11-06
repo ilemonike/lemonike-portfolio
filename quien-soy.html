@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quién soy — Portafolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <script src="js/theme.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js" defer></script>
+  <script src="js/about.js" defer></script>
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="index.html"><img src="assets/lemonike-logo.svg" alt="LEMONIKE" /></a>
+    <p class="nav-role">Art director &amp;<br />Brand designer</p>
+    <nav aria-label="Principal">
+      <a href="arte.html">Arte</a>
+      <a href="diseno.html">Diseño</a>
+      <a href="quien-soy.html" class="active" aria-current="page">Quién soy</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="mailto:lemonikestuccio@gmail.com">Let’s imagine together</a>
+      <a href="diseno.html">Go Forward</a>
+    </nav>
+  </header>
+
+  <main class="about-page">
+    <section class="about-intro" aria-labelledby="about-title">
+      <div class="about-portrait about-reveal" role="img" aria-label="Espacio para el retrato de Lemonike"></div>
+      <div class="about-reveal about-bio"><h1 id="about-title" data-reveal-text>Quién soy</h1><p data-reveal-text>Arte, dirección de arte y diseño de marca.</p></div>
+    </section>
+
+    <section class="cv-section" aria-labelledby="learning-title">
+      <div class="about-reveal"><h2 id="learning-title" data-reveal-text>Aprendizaje</h2></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Master in Art Direction</h3><p data-reveal-text>Miami Ad School México/Berlin</p></div><span class="cv-date" data-reveal-text>2013–2015</span></div>
+      <div class="cv-row cv-divider about-reveal"><div><h3 data-reveal-text>Bachelor in Graphic Design</h3><p data-reveal-text>Universidad Autónoma de Guadalajara</p></div><span class="cv-date" data-reveal-text>2007–2011</span></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Foundations of User Experience (UX) Design</h3><p data-reveal-text>Google</p></div><span class="cv-date" data-reveal-text>2025</span></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>UX Beginner guide</h3><p data-reveal-text>Interaction Design</p></div><span class="cv-date" data-reveal-text>2023</span></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Brand Management Course</h3><p data-reveal-text>Tecnológico de Monterrey Online</p></div><span class="cv-date" data-reveal-text>Oct–Dic 2022</span></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Simplexity:<br />Creativity for solving problems</h3><p data-reveal-text>Centro.edu</p></div><span class="cv-date" data-reveal-text>2021</span></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Participant role Visual viewer designer in Summit TECHila Garden</h3><p data-reveal-text>Ars Electronica</p></div><span class="cv-date" data-reveal-text>2020</span></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Workshop Created digital experience and Art Thinking method.</h3><p data-reveal-text>Kristefan Minsky · Ars Electronica</p></div><span class="cv-date" data-reveal-text>2020</span></div>
+    </section>
+
+    <section class="cv-section" aria-labelledby="experience-title">
+      <div class="about-reveal"><h2 id="experience-title" data-reveal-text>Experiencia profesional</h2></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Graphic Designer / UXUI Contractor</h3><p data-reveal-text>Blackstone Studio</p></div><span class="cv-date" data-reveal-text>Ago 2023–Actualidad</span></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Graphic Designer / UXUI</h3><p data-reveal-text>Blackstone Studio</p></div><span class="cv-date" data-reveal-text>Ene 2022–2023</span></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Senior Designer</h3><p data-reveal-text>Leaper 360</p></div><span class="cv-date" data-reveal-text>Sep/Abr 2020</span></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Creative Art Director</h3><p data-reveal-text>Monkey Philosophy</p></div><span class="cv-date" data-reveal-text>May 2016–Dic 2018</span></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Internship Junior Designer</h3><p data-reveal-text>DDB Berlin</p></div><span class="cv-date" data-reveal-text>Oct–Dic 2015</span></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Creative Art Developer</h3><p data-reveal-text>Filipa Creative Agency</p></div><span class="cv-date" data-reveal-text>Ene–Oct 2015</span></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Internship Junior Designer</h3><p data-reveal-text>DDB México</p></div><span class="cv-date" data-reveal-text>Oct–Dic 2014</span></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Junior Designer</h3><p data-reveal-text>Ochosieteseis</p></div><span class="cv-date" data-reveal-text>Sep 2012–Abr 2013</span></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Junior Designer</h3><p data-reveal-text>KP Alazraki</p></div><span class="cv-date" data-reveal-text>Ene 2010–Abr 2011</span></div>
+      <div class="cv-row about-reveal"><div><h3 data-reveal-text>Internship Junior Designer</h3><p data-reveal-text>Grupo Promomedios Radio</p></div><span class="cv-date" data-reveal-text>Jul–Nov 2009</span></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p class="footer-credit"><strong>© 2026 LEMONIKE. All rights reserved.</strong></p>
+    <div class="footer-social"><strong>Social media</strong><nav aria-label="Redes sociales"><a href="https://www.linkedin.com/in/monica-gabriela-a-8071aa42" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://www.instagram.com/ilemonike/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></nav></div>
+    <div class="footer-legal"><p class="footer-notice" lang="en">All original artwork, illustrations, visual concepts, and designs featured on this website are the intellectual property of their respective copyright holders. Unauthorized reproduction, distribution, modification, commercial use, or use for AI training is prohibited without prior written permission.</p></div>
+  </footer>
+</body>
+</html>
