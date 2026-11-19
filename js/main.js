@@ -25,16 +25,28 @@ const designCategories = document.getElementById('design-categories');
 const artRows = document.getElementById('art-rows');
 if (artRows) {
   const works = PROYECTOS.filter((project) => project.vertical === 'arte' && !project.slug.startsWith('obra-ejemplo'));
-  const rowCount = Math.max(2, Math.ceil(works.length / 10));
-  artRows.innerHTML = Array.from({ length: rowCount }, (_, row) => `
-    <section class="art-scroll-row" tabindex="0" aria-label="Obras de arte, fila ${row + 1}. Desplázate horizontalmente para ver los 10 cuadros.">
-      ${Array.from({ length: 10 }, (_, column) => {
-        const work = works[row * 10 + column];
-        return work ? `<a class="art-work" href="proyecto.html?slug=${work.slug}">
-          <div class="art-image"><img src="${work.portada}" alt="${work.titulo}" loading="lazy" /></div>
-          <h2>${work.titulo}</h2>
-        </a>` : `<div class="art-work art-placeholder" aria-hidden="true"><div class="art-image"></div></div>`;
-      }).join('')}
+  const isDigital = (project) => /digital|3d/i.test(project.tecnica || '');
+  const groups = [
+    { title: 'art & handmade', items: works.filter((project) => !isDigital(project)) },
+    { title: 'digital illustration', items: works.filter(isDigital) },
+  ];
+  const renderRows = (items, groupIndex) => {
+    const rowCount = Math.max(1, Math.ceil(items.length / 10));
+    return Array.from({ length: rowCount }, (_, row) => `
+      <section class="art-scroll-row" tabindex="0" aria-label="Obras de arte, fila ${row + 1}. Desplázate horizontalmente para ver las obras.">
+        ${Array.from({ length: 10 }, (_, column) => {
+          const work = items[row * 10 + column];
+          return work ? `<a class="art-work" href="proyecto.html?slug=${work.slug}">
+            <div class="art-image"><img src="${work.portada}" alt="${work.titulo}" loading="lazy" /></div>
+            <h2>${work.titulo}</h2>
+          </a>` : `<div class="art-work art-placeholder" aria-hidden="true"><div class="art-image"></div></div>`;
+        }).join('')}
+      </section>`).join('');
+  };
+  artRows.innerHTML = groups.filter((group) => group.items.length).map((group, groupIndex) => `
+    <section class="art-group" aria-labelledby="art-group-${groupIndex}">
+      <h2 id="art-group-${groupIndex}" class="art-group-title">${group.title}</h2>
+      ${renderRows(group.items, groupIndex)}
     </section>`).join('');
 }
 if (designCategories) {
@@ -115,6 +127,17 @@ if (detalle) {
   if (!p) {
     detalle.innerHTML = "<p>Proyecto no encontrado. Vuelve a <a href='index.html'>inicio</a>.</p>";
   } else {
+    const artProjects = PROYECTOS.filter((project) => project.vertical === 'arte' && !project.slug.startsWith('obra-ejemplo'));
+    const artOrder = [
+      ...artProjects.filter((project) => !/digital|3d/i.test(project.tecnica || '')),
+      ...artProjects.filter((project) => /digital|3d/i.test(project.tecnica || '')),
+    ];
+    const nextArt = p.vertical === 'arte' && artOrder.length > 1
+      ? artOrder[(artOrder.findIndex((project) => project.slug === p.slug) + 1) % artOrder.length]
+      : null;
+    const previousArt = p.vertical === 'arte' && artOrder.length > 1
+      ? artOrder[(artOrder.findIndex((project) => project.slug === p.slug) - 1 + artOrder.length) % artOrder.length]
+      : null;
     const images = [...new Set([p.portada, ...(p.galeria || [])].filter(Boolean))];
     // Cada proyecto puede repetir bloques y elegir su propia secuencia editorial.
     const composition = p.composicion || [];
@@ -138,7 +161,7 @@ if (detalle) {
     }).join('');
     const related = PROYECTOS.filter((project) => project.slug !== p.slug && !project.slug.startsWith('obra-ejemplo'))
       .sort((a, b) => Number(b.vertical === p.vertical) - Number(a.vertical === p.vertical)).slice(0, 3);
-    detalle.classList.add('project-detail');
+    detalle.classList.add('project-detail', `project-${p.vertical}`);
     detalle.innerHTML = `
       <h1 class="project-title">${p.titulo}</h1>
       <div class="project-intro">
@@ -152,6 +175,10 @@ if (detalle) {
         <p class="project-description">${p.descripcion || ''}</p>
       </div>
       ${imageBlocks}
+      ${nextArt ? `<nav class="page-navigation project-forward" aria-label="Navegación de My Parallel Universe">
+        <a class="direction-button" href="proyecto.html?slug=${previousArt.slug}"><span class="direction-arrow arrow-left" aria-hidden="true"></span> Go Back</a>
+        <a class="direction-button" href="proyecto.html?slug=${nextArt.slug}">Go Forward <span class="direction-arrow" aria-hidden="true"></span></a>
+      </nav>` : ''}
       ${p.aprendizaje ? `<blockquote class="project-quote">${p.aprendizaje}</blockquote>` : ''}
       ${relatedHTML(related)}`;
     initCarrusel();
