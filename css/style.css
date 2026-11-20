@@ -93,7 +93,7 @@ h2, .logo { font-family: var(--font-display); font-weight: 400; letter-spacing: 
 .project-art .project-image-section { display: flex; justify-content: center; }
 .project-art .project-images { width: min(100%, 820px); margin-inline: auto; justify-content: center; }
 .project-art .project-images figure { display: flex; align-items: center; justify-content: center; width: 100%; max-width: 100%; aspect-ratio: auto !important; }
-.project-art .project-images img { display: block; width: auto !important; max-width: min(100%, 620px); height: auto !important; max-height: 500px; object-fit: contain !important; margin-inline: auto; }
+.project-art .project-images img { display: block; width: auto !important; max-width: min(100%, 600px); height: auto !important; max-height: 520px; object-fit: contain !important; margin-inline: auto; }
 .project-art .project-images[style] { grid-template-columns: 1fr; }
 .project-art .project-images[style] figure { min-height: 0; height: auto; }
 .project-image-section + .project-image-section, .project-extra + .project-image-section { margin-top: clamp(3rem, 7vw, 7rem); }

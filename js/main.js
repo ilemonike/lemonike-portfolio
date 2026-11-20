@@ -27,8 +27,8 @@ if (artRows) {
   const works = PROYECTOS.filter((project) => project.vertical === 'arte' && !project.slug.startsWith('obra-ejemplo'));
   const isDigital = (project) => /digital|3d/i.test(project.tecnica || '');
   const groups = [
-    { title: 'art & handmade', items: works.filter((project) => !isDigital(project)) },
-    { title: 'digital illustration', items: works.filter(isDigital) },
+    { title: 'Arte', items: works.filter((project) => !isDigital(project)) },
+    { title: 'Digital illustration', items: works.filter(isDigital) },
   ];
   const renderRows = (items, groupIndex) => {
     const rowCount = Math.max(1, Math.ceil(items.length / 10));
@@ -161,7 +161,7 @@ if (detalle) {
     }).join('');
     const related = PROYECTOS.filter((project) => project.slug !== p.slug && !project.slug.startsWith('obra-ejemplo'))
       .sort((a, b) => Number(b.vertical === p.vertical) - Number(a.vertical === p.vertical)).slice(0, 3);
-    detalle.classList.add('project-detail', `project-${p.vertical}`);
+    detalle.classList.add('project-detail', p.vertical === 'arte' ? 'project-art' : 'project-diseno');
     detalle.innerHTML = `
       <h1 class="project-title">${p.titulo}</h1>
       <div class="project-intro">
